@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>@CXCRACK</title>
+</head>
+<body class="flex flex-col bg-zinc-800 items-center justify-center w-screen h-screen">
+    <div class="flex flex-col items-center text-white">
+        <p class="text-xl">Enter your secret key</p>
+        <form class="flex flex-col w-[400px]" method="POST" action="/api/accses">
+            <input class="border mt-[10px] p-2 rounded bg-zinc-700 shadow" name="accses" placeholder="Secret Code" type="password">
+            <button class="mt-[10px] bg-sky-800 p-1 h-10 rounded hover:scale-[101%] shadow-xl transition" type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
