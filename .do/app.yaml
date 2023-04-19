@@ -1,0 +1,6 @@
+name: sample
+services:
+- name: web
+  github:
+    repo: cyberassemble/wen
+    branch: main
