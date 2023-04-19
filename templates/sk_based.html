@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>@CXCRACK</title>
+</head>
+<body class="flex flex-col bg-zinc-800 items-center justify-center w-screen h-screen">
+    <div class="text-white flex flex-col items-center">
+        <p class="text-2xl mb-2">Credit Cards</p>
+        <div class="check flex flex-col">
+            <textarea id="cards" placeholder="xxxxxxxxxxxxxxxxx|xx|xx|xxx" name="cards" class="bg-zinc-700 resize-none	border border-zinc-500 p-2 border-2 rounded w-[300px] h-[400px]"></textarea>
+            <select name="option" id="option" class="bg-zinc-700 p-1 mt-1 rounded">
+                <option value="50">Stripe 0.5$</option>
+                <option value="100">Stripe 1$</option>
+                <option value="200">Stripe 2$</option>
+                <option value="300">Stripe 3$</option>
+                <option value="400">Stripe 4$</option>
+                <option value="500">Stripe 5$</option>
+            </select>
+            <button class="bg-zinc-600 p-1 h-10 rounded hover:scale-[101%] shadow-xl transition  mt-1" onclick="charge().catch(console.error)">Check</button>
+            <button class="bg-zinc-600 p-1 h-10 rounded hover:scale-[101%] shadow-xl transition  mt-1" onclick="stop()">Stop</button>
+            <button class="bg-zinc-600 p-1 h-10 rounded hover:scale-[101%] shadow-xl transition  mt-3" onclick="delete_cards()">Clear</button>
+        </div>
+    </div>
+
+    <div class="cards mt-10 flex">
+        <div id="dead" class="dead flex flex-col items-center text-red-400 mr-5 overflow:scroll;">
+            <div>
+                <p class="text-2xl text-white">Dead</p>
+            </div>
+            <div id="dead-cards" class="h-[250px] overflow-y-auto">
+
+            </div>
+        </div>
+        <div id="charge" class="charge flex flex-col items-center text-green-400 ml-5 mr-5 overflow:scroll;">
+            <div>
+                <p class="text-2xl text-white">Charged</p>
+            </div>
+            <div id="charge-cards" class="h-[250px] overflow-y-auto">
+
+            </div>
+        </div>
+    </div>
+    <script src="/static/sk_based.js"></script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>@CXCRACK</title>
+</head>
+<body class="flex flex-col bg-zinc-800 items-center justify-center w-screen h-screen">
+    <div class="flex flex-col items-center text-white">
+        <p class="text-xl">Create a new key</p>
+        <form class="flex flex-col w-[400px]" method="POST" action="/api/create">
+            <input class="border mt-[10px] p-2 rounded bg-zinc-700 shadow" type="date" name="date">
+            <input class="border mt-[10px] p-2 rounded bg-zinc-700 shadow" placeholder="Admin Code" type="text" name="admin_secret">
+            <button class="mt-[10px] bg-sky-800 p-1 h-10 rounded hover:scale-[101%] shadow-xl transition" type="submit">Create</button>
+        </form>
+    </div>
+    <div class="flex flex-col items-center text-white mt-10">
+        <p class="text-xl">Keys</p>
+        {% for data in keys %}
+        <div class="key flex bg-sky-800 p-4 w-[300px] justify-center rounded shadow cursor-pointer hover:scale-[101%] transition mb-2">
+            <p class="float-left">{{data["accses"]}}</p>
+            <div class="ml-2 mr-2"></div>
+            <p class="float-right">{{data["expires"]}}</p>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
